@@ -40,7 +40,9 @@ public class Main extends Loop{
         State.setState(menuState);
         
         display.getFrame().addMouseMotionListener(player);
+        display.getFrame().addMouseListener(player);
         display.getCanvas().addMouseMotionListener(player);
+        display.getCanvas().addMouseListener(player);
     }
     
     @Override
@@ -64,7 +66,7 @@ public class Main extends Loop{
         //Clear Screen
         g.clearRect(0, 0, width, height);
         
-        g.setColor(new Color(177, 237, 219));
+        g.setColor(Color.LIGHT_GRAY);
         g.fillRect(0, 0, width, height);
         
         State.getState().render(g);

@@ -21,14 +21,14 @@ public class MenuState extends State{
     public MenuState(Main main){
         super(main);
         
-        newGameButton = new Button(new Color(182, 161, 251), new Color(182, 161, 251).brighter(), new Color(85, 73, 123), Main.width / 3, Main.height / 3, 200, 50, "New Game", "RECT");
-        exitButton = new Button(new Color(254, 151, 167), new Color(254, 151, 167).brighter(), new Color(161, 76, 89), Main.width / 3, Main.height / 2, 200, 50, "Exit", "RECT");
+        newGameButton = new Button(new Color(182, 161, 251), new Color(182, 161, 251).brighter(), new Color(85, 73, 123), Main.width / 4, Main.height /2, 200, 50, "New Game", "RECT");
+        exitButton = new Button(new Color(254, 151, 167), new Color(254, 151, 167).brighter(), new Color(161, 76, 89), Main.width / 4, Main.height *3/4, 200, 50, "Exit", "RECT");
         player = main.getPlayer();
         
         //Color button, Color highlightButton, Color txt, int x, int y, int width, int height, String text, String shape
         
     }
-
+    
     @Override
     public void update(){
         
@@ -36,12 +36,10 @@ public class MenuState extends State{
         exitButton.update((int)player.getMouseX(), (int)player.getMouseY());
         
         if(newGameButton.click(player.getLeftPressed())){
-            System.out.print("thing1");
         	State.setState(main.getGameState());
         }
         
         if(exitButton.click(player.getLeftPressed())){
-        	System.out.println("thing2");
             System.exit(0);
         }
     }
@@ -51,7 +49,7 @@ public class MenuState extends State{
         
         String message;
         if(Driver.status.equalsIgnoreCase("START"))
-        	message = "Welcome to Interplanetary Pong";
+        	message = "Welcome to Interplanetary Pong!";
         else if(Driver.status.equalsIgnoreCase("LEFTWIN"))
         	message = "Left Player Wins!";
         else if(Driver.status.equalsIgnoreCase("RIGHTWIN"))
@@ -59,9 +57,12 @@ public class MenuState extends State{
         else
         	message = "How'd you manage that?";
         
-        g.setFont(new Font("Impact", Font.BOLD, 50));
+        g.setFont(new Font("Impact", Font.PLAIN, 40));
         g.setColor(new Color(28, 109, 144));
-        g.drawString(message, (width / 2) - (g.getFontMetrics().stringWidth(message)/2), (height / 2) - 60);
+        g.drawString(message, (width / 2) - (g.getFontMetrics().stringWidth(message)/2), height / 4);
+        
+        g.setFont(new Font("Impact", Font.PLAIN, 40));
+        g.setColor(new Color(28, 109, 144));
         
         g.setFont(new Font("Impact", Font.BOLD, 35));
         newGameButton.render(g);
