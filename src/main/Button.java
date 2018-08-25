@@ -41,6 +41,7 @@ public class Button {
         if(type.equalsIgnoreCase("BACK")){
         	x = 16;
         	y = 16;
+        	//testing comment
         	width = 32;
         	height = 32;
         	text = "";
