@@ -17,7 +17,13 @@ public class Planet {
 	}
 	
 	public void render(Graphics g){
-		int diameter = size*5;
+		int diameter = size*20;
+		g.setColor(col);
 		g.fillOval(xPos-diameter/2, yPos-diameter/2, diameter, diameter);
 	}
+	
+	public int getXPos() {return xPos;}
+	public int getYPos() {return yPos;}
+	public int getSize() {return size;}
+	public Color getCol() {return col;}
 }

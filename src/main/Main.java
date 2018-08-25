@@ -29,7 +29,7 @@ public class Main extends Loop{
         width = 1080;
         height = 720;
         
-        display = new Display("Side Pong", width, height);
+        display = new Display("Planetary Protection", width, height);
         status = Driver.status;
         
         player = new Player();
