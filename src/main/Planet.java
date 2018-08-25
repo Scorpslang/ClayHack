@@ -18,6 +18,6 @@ public class Planet {
 	
 	public void render(Graphics g){
 		int diameter = size*5;
-		g.drawOval(xPos-diameter/2, yPos-diameter/2, diameter, diameter);
+		g.fillOval(xPos-diameter/2, yPos-diameter/2, diameter, diameter);
 	}
 }
